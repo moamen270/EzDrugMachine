@@ -1,0 +1,114 @@
+
+body, html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  margin: 0;
+}
+.bg {
+  /* The image used */
+  background-image: url("../images/Home.svg");
+  text-align: center;
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+} 
+
+.Press {
+  position: absolute;
+  bottom: 0%;
+  right: 41.5%;
+  color: #707070;
+}
+.Press:hover {
+  position: absolute;
+  bottom: 0%;
+  right: 41.5%;
+  color:  aliceblue;
+}
+
+.primary{
+  color: #272743!important;
+}
+.secondry{
+  color: #2D698D!important;
+}
+.primary-bg{
+  background-color: #272743!important;
+}
+
+.bg-secondry{
+  background-color: #2D698D!important;
+} 
+
+.login-icon{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.primary-color{
+  color: #272743;
+}
+
+
+.form-control{
+  display: inline;
+  width: 85%;
+  margin: 10px;
+}
+
+.m-10{
+  margin: 140px!important;
+}
+.px-10{
+  padding-left: 150px!important;
+  padding-right: 150px!important;
+}
+
+
+.gradient-prim{
+  background: rgb(39,39,67);
+background: linear-gradient(0deg, rgba(39,39,67,0.6250875350140056) 0%, rgba(34,193,195,1) 100%); 
+}
+
+
+.img-part{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+.head{
+  font-size: 50px;
+  color: #272743;
+}
+
+.bg-sec{
+  background-color:#BAE8E8 ;
+}
+
+.w-cust{
+  max-width: 79%!important;
+}
+
+.max-h{
+  max-height: 300px !important;
+  height: 300px;
+
+}
+
+.img-detail{
+  width: 100%;
+}
+
+
+span{
+  font-size: 25px;
+}
