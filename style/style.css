@@ -9,7 +9,8 @@ body, html {
   background-image: url("../images/Home.svg");
   text-align: center;
   /* Full height */
-  height: 100%; 
+  width: 100%; 
+  height: 100%;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -67,8 +68,8 @@ body, html {
   margin: 140px!important;
 }
 .px-10{
-  padding-left: 150px!important;
-  padding-right: 150px!important;
+  padding-left: 40%!important;
+  padding-right: 40%!important;
 }
 
 
