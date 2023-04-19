@@ -6,11 +6,11 @@ body, html {
 }
 .bg {
   /* The image used */
-  background-image: url("../images/Home.svg");
+  background-image: url("../images/ezgif.gif");
   text-align: center;
   /* Full height */
-  width: 100%; 
-  height: 100%;
+  width: auto; 
+  height: auto;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -20,15 +20,11 @@ body, html {
 } 
 
 .Press {
-  position: absolute;
-  bottom: 0%;
-  right: 41.5%;
+  padding-top: 45%;
   color: #707070;
 }
 .Press:hover {
-  position: absolute;
-  bottom: 0%;
-  right: 41.5%;
+  padding-top: 45%;
   color:  aliceblue;
 }
 
@@ -68,8 +64,8 @@ body, html {
   margin: 140px!important;
 }
 .px-10{
-  padding-left: 40%!important;
-  padding-right: 40%!important;
+  padding-left: 35%!important;
+  padding-right: 35%!important;
 }
 
 
@@ -86,22 +82,19 @@ background: linear-gradient(0deg, rgba(39,39,67,0.6250875350140056) 0%, rgba(34,
   width: 20%;
 }
 
-.head{
-  font-size: 50px;
-  color: #272743;
-}
+
 
 .bg-sec{
   background-color:#BAE8E8 ;
 }
 
 .w-cust{
-  max-width: 79%!important;
+  max-width: 80%!important;
 }
 
 .max-h{
-  max-height: 300px !important;
-  height: 300px;
+  max-height: 280px !important;
+  height: 280px;
 
 }
 
@@ -112,4 +105,7 @@ background: linear-gradient(0deg, rgba(39,39,67,0.6250875350140056) 0%, rgba(34,
 
 span{
   font-size: 25px;
+}
+.d-font{
+  font-size: 100%;
 }

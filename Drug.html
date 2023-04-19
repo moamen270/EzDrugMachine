@@ -12,9 +12,10 @@
   <div class="container w-cust h-100 bg-white pt-5">
       <img class="img-part" src="images/NoBg.png" width="50%" alt="">
       <h1 class="text-center head mb-5 " ><b id="categoryName"> </b> </h1>
-    <div class="container">
+    <div class="container ">
       <h1 class="text-center card head my-5 bg-light py-3" ><b id="drugName"> </b> </h1>
       <div class="card bg-light" id="drug">
+        
       </div>
       
     </div>
@@ -36,19 +37,20 @@
       
         <div class="card-body  row justify-content-around">
           <div class="col-3">
-            <img class="img-detail" src="${data.drug.imageURL}"  alt="">
+            <img class="img-detail  border bg-white rounded-circle" src="${data.drug.imageURL}"  alt="">
             <div class="text-center">
-              <span class="text-center"> ${data.drug.dosageForm}    ${data.drug.dosageStrength}</span>
-              <span class="text-center  d-block"><b>Price:</b> ${data.drug.price}$</span>
-              <span class="text-center  d-block"><b>Stock:</b> ${data.drug.stock} <i class="bi bi-plus-square-fill secondry"></i></span>
+              <span class=""> ${data.drug.dosageForm}</span>
+              <span class="d-block">${data.drug.dosageStrength} LE</span>
+              <span class="d-block"><b>Price:</b> ${data.drug.price} LE</span>
+              <span class="d-block"><b>Stock:</b> ${data.drug.stock} </span>
             </div>
           </div>
           <div class="col-8 ml-5 mt-5">
-            <h3  class="mb-4"><b>Side Effects:</b> ${data.drug.sideEffects}</h3>
-            <h3  class="mb-4"><b>Contraindications: </b> ${data.drug.contraindications}</h3>
-            <h3  class="mb-4"><b>Description:</b> ${data.drug.description}</h3>
-            <h3  class="mb-4"><b>PregnancyCategory:</b> ${data.drug.pregnancyCategory}</h3>
-            <h3  class="mb-4"><b>Manufacturer:</b>${data.drug.manufacturer.name}</h3>
+            <h3  class="mb-4"><b>Side Effects : </b> ${data.drug.sideEffects}</h3>
+            <h3  class="mb-4"><b>Contraindications : </b> ${data.drug.contraindications}</h3>
+            <h3  class="mb-4"><b>Description : </b> ${data.drug.description}</h3>
+            <h3  class="mb-4"><b>Pregnancy Category : </b> ${data.drug.pregnancyCategory}</h3>
+            <h3  class="mb-4"><b>Manufacturer : </b>${data.drug.manufacturer.name}</h3>
             <a href="" class="btn btn-lg btn-primary bg-secondry  w-100">Add to cart</a>
           </div>
         </div>
