@@ -10,22 +10,18 @@
 </head>
 <body class="primary-bg">
   <div class="container w-cust h-100 bg-white pt-5">
-      <img class="img-part" src="images/NoBg.png" width="50%" alt="">
-      <h1 class="text-center head mb-5 " ><b id="categoryName"> </b> </h1>
+    <img class="img-part" src="images/NoBg.png" width="50%" alt="">
+    <h1 class="text-center head mb-5 " ><b id="categoryName"> </b> </h1>
     <div class="container ">
       <h1 class="text-center card head my-5 bg-light py-3" ><b id="drugName"> </b> </h1>
-      <div class="card bg-light" id="drug">
-        
-      </div>
-      
+      <div class="card bg-light" id="drug">        
+      </div>      
     </div>
   </div>
 
-
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const drugId = urlParams.get('id');
-    
+    const drugId = urlParams.get('id');    
     fetch(`https://api.ezdrug.tech/Drug/${drugId}`)
     .then(response => response.json())
     .then(data => {
@@ -34,13 +30,12 @@
       document.title = data.drug.name;    
       const tbody = document.getElementById('drug');      
       const row = `
-      
         <div class="card-body  row justify-content-around">
           <div class="col-3">
             <img class="img-detail  border bg-white rounded-circle" src="${data.drug.imageURL}"  alt="">
             <div class="text-center">
               <span class=""> ${data.drug.dosageForm}</span>
-              <span class="d-block">${data.drug.dosageStrength} LE</span>
+              <span class="d-block">${data.drug.dosageStrength}</span>
               <span class="d-block"><b>Price:</b> ${data.drug.price} LE</span>
               <span class="d-block"><b>Stock:</b> ${data.drug.stock} </span>
             </div>
@@ -54,14 +49,12 @@
             <a href="" class="btn btn-lg btn-primary bg-secondry  w-100">Add to cart</a>
           </div>
         </div>
-   
         `;
         const cheader = document.getElementById('categoryName');
         cheader.innerHTML = data.drug.category.name       
         tbody.innerHTML += row;          
         })
-    .catch(error => console.error(error));
-    
+    .catch(error => console.error(error));    
   </script>
 </body>
 </html>
