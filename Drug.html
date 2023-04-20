@@ -31,7 +31,7 @@
       document.title = data.drug.name;    
       const tbody = document.getElementById('drug');      
       const row = `
-        <div class="card-body  row justify-content-around">
+        <div class="card-body row justify-content-around">
           <div class="col-lg-3 col-md-12 justify-content-center">
             <img class="w-100  border bg-white rounded-circle" src="${data.drug.imageURL}"  alt="">
             <div class="text-center">
@@ -41,13 +41,13 @@
               <span class="d-block"><b>Stock:</b> ${data.drug.stock} </span>
             </div>
           </div>
-          <div class="col-8 ml-5 mt-5">
-            <h3  class="mb-4"> Side Effects : ${data.drug.sideEffects}</h3>
-            <h3  class="mb-4"> Contraindications : ${data.drug.contraindications}</h3>
-            <h3  class="mb-4"> Description : ${data.drug.description}</h3>
-            <h3  class="mb-4"> Pregnancy Category :  ${data.drug.pregnancyCategory}</h3>
-            <h3  class="mb-4"> Manufacturer :${data.drug.manufacturer.name}</h3>
-            <a href="" class="btn btn-lg btn-primary bg-secondry  w-100">Add to cart</a>
+          <div class="col-lg-8 col-md-12 ml-lg-5 mt-5">
+            <h5  class="mb-4"> Side Effects : ${data.drug.sideEffects}</h5>
+            <h5  class="mb-4"> Contraindications : ${data.drug.contraindications}</h5>
+            <h5  class="mb-4"> Description : ${data.drug.description}</h5>
+            <h5  class="mb-4"> Pregnancy Category :  ${data.drug.pregnancyCategory}</h5>
+            <h5  class="mb-5"> Manufacturer :${data.drug.manufacturer.name}</h5>
+            <a href="" class="mt-2 btn btn-lg btn-primary bg-secondry  w-100">Add to cart</a>
           </div>
         </div>
         `;
