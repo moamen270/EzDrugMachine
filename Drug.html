@@ -31,8 +31,8 @@
       const tbody = document.getElementById('drug');      
       const row = `
         <div class="card-body  row justify-content-around">
-          <div class="col-3">
-            <img class="img-detail  border bg-white rounded-circle" src="${data.drug.imageURL}"  alt="">
+          <div class="col-lg-3 col-md-12 justify-content-center">
+            <img class="w-100  border bg-white rounded-circle" src="${data.drug.imageURL}"  alt="">
             <div class="text-center">
               <span class=""> ${data.drug.dosageForm}</span>
               <span class="d-block">${data.drug.dosageStrength}</span>
@@ -41,11 +41,11 @@
             </div>
           </div>
           <div class="col-8 ml-5 mt-5">
-            <h3  class="mb-4"><b>Side Effects : </b> ${data.drug.sideEffects}</h3>
-            <h3  class="mb-4"><b>Contraindications : </b> ${data.drug.contraindications}</h3>
-            <h3  class="mb-4"><b>Description : </b> ${data.drug.description}</h3>
-            <h3  class="mb-4"><b>Pregnancy Category : </b> ${data.drug.pregnancyCategory}</h3>
-            <h3  class="mb-4"><b>Manufacturer : </b>${data.drug.manufacturer.name}</h3>
+            <h3  class="mb-4"> Side Effects : ${data.drug.sideEffects}</h3>
+            <h3  class="mb-4"> Contraindications : ${data.drug.contraindications}</h3>
+            <h3  class="mb-4"> Description : ${data.drug.description}</h3>
+            <h3  class="mb-4"> Pregnancy Category :  ${data.drug.pregnancyCategory}</h3>
+            <h3  class="mb-4"> Manufacturer :${data.drug.manufacturer.name}</h3>
             <a href="" class="btn btn-lg btn-primary bg-secondry  w-100">Add to cart</a>
           </div>
         </div>

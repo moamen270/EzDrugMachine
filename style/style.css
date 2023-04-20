@@ -46,7 +46,8 @@ body, html {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  max-width: 500px;
+  width: 100%;
 }
 
 .primary-color{
@@ -79,7 +80,8 @@ background: linear-gradient(0deg, rgba(39,39,67,0.6250875350140056) 0%, rgba(34,
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 20%;
+  max-width: 500px;
+  width: 100%;
 }
 
 
@@ -98,9 +100,7 @@ background: linear-gradient(0deg, rgba(39,39,67,0.6250875350140056) 0%, rgba(34,
 
 }
 
-.img-detail{
-  width: 100%;
-}
+
 
 span{
   font-size: 25px;
@@ -110,11 +110,11 @@ span{
 }
 
 h1{
-  font-size:2vw !important;
+  font-size: clamp(100px ,10vw + 1rem,200px);
 }
 h2{
-  font-size:1vw !important;
+  font-size: clamp(100px ,10vw + 1rem,200px);
 }
 h3{
-  font-size:1vw !important;
+  font-size: clamp(100px ,10vw + 1rem,200px);
 }
