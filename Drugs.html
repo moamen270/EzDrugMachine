@@ -13,17 +13,14 @@
     </style>
 </head>
 <body class="primary-bg">
-  <div id="checkLength" class="container w-cust h- bg-light pt-5">
+  <div id="checkLength" class="container w-cust h-auto  bg-light pt-5">
     <div>
-      <img class="img-part" src="images/NoBg.png" width="50%" alt="">
+      <img class="img-part" src="images/Name Light NoBg.png" width="50%" alt="">
       <h1 class="text-center head mb-5 " id="categoryName"> </h1>
     </div>
-    <div class="row justify-content-center" id="drugs">
+    <div class="row justify-content-center " id="drugs">
 
     </div>
-    <br>
-    <br>
-    <br>
     
     
   </div>
@@ -52,18 +49,18 @@
       const tbody = document.getElementById('drugs');
       data.drugs.forEach(item => {
         const row = `
-        <div class="col-lg-4  col-md-6 col-sm-6  mb-3">
+        <div class="col-lg-4  col-md-6 col-sm-6  mb-3 jus">
           <div class="card">
             <div class="card-body ">
               <a href="Drug.html?id=${item.id}">
-                <img class="login-icon mb-3" src="${item.imageURL}" alt="">
+                <img class="login-icon mb-3 " src="${item.imageURL}" alt="">
               </a>
               <h3 class="card-title text-center">${item.name}</h3>
             </div>
           </div>
         </div>
         `;          
-        if(data.drugs.length <4)
+        if(data.drugs.length <7)
         {
           const myDiv = document.getElementById('checkLength');
           myDiv.classList.remove('h-auto');
