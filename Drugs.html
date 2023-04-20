@@ -13,12 +13,12 @@
     </style>
 </head>
 <body class="primary-bg">
-  <div id="checkLength" class="container w-cust h-auto bg-light pt-5">
+  <div id="checkLength" class="container w-cust h- bg-light pt-5">
     <div>
       <img class="img-part" src="images/NoBg.png" width="50%" alt="">
       <h1 class="text-center head mb-5 " ><b id="categoryName"> </b> </h1>
     </div>
-    <div class="row" id="drugs">
+    <div class="row justify-content-center" id="drugs">
 
     </div>
     <br>
@@ -52,7 +52,7 @@
       const tbody = document.getElementById('drugs');
       data.drugs.forEach(item => {
         const row = `
-        <div class="col-4 mb-3">
+        <div class="col-lg-4  col-md-6 col-sm-6  mb-3">
           <div class="card">
             <div class="card-body ">
               <a href="Drug.html?id=${item.id}">

@@ -15,7 +15,7 @@ body, html {
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
 
 } 
 
@@ -94,7 +94,7 @@ background: linear-gradient(0deg, rgba(39,39,67,0.6250875350140056) 0%, rgba(34,
 
 .max-h{
   max-height: 280px !important;
-  height: 280px;
+  height: auto;
 
 }
 
