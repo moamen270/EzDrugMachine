@@ -109,3 +109,13 @@ span{
 .d-font{
   font-size: 100%;
 }
+
+h1{
+  font-size:8vw !important;
+}
+h2{
+  font-size:6vw !important;
+}
+h3{
+  font-size:2vw !important;
+}
