@@ -46,7 +46,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     const categoryId = urlParams.get('id');
     
-    fetch(`http://api.ezdrug.tech/Category/${categoryId}`)
+    fetch(`https://api.ezdrug.tech/Category/${categoryId}`)
     .then(response => response.json())
     .then(category => {
       const categoryName  = document.getElementById('categoryName');
@@ -59,7 +59,7 @@
 
 
 
-    fetch(`http://api.ezdrug.tech/Category/GetDrugs/${categoryId}`)
+    fetch(`https://api.ezdrug.tech/Category/GetDrugs/${categoryId}`)
     .then(response => response.json())
     .then(data => {
       const tbody = document.getElementById('drugs');

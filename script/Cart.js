@@ -56,7 +56,7 @@ function goCart(){
 async function getData(id) {
 
   try {
-    const response = await fetch('http://api.ezdrug.tech/Drug/'+id);
+    const response = await fetch('https://api.ezdrug.tech/Drug/'+id);
     const data = await response.json();
     return data;
   } catch (error) {

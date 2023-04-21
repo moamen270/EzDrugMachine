@@ -39,7 +39,7 @@
     
     const urlParams = new URLSearchParams(window.location.search);
     const drugId = urlParams.get('id');    
-    fetch(`http://api.ezdrug.tech/Drug/${drugId}`)
+    fetch(`https://api.ezdrug.tech/Drug/${drugId}`)
     .then(response => response.json())
     .then(data => {
       const drugName  = document.getElementById('drugName');
