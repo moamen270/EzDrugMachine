@@ -3,8 +3,9 @@ function goBack(){
 }
 
 function exit(){
-  window.location.href ='https://moamen270.github.io/EzDrugMachine/'
   freeCart()
+  window.location.href ='https://moamen270.github.io/EzDrugMachine/'
+  
 }
 
 function reload()
