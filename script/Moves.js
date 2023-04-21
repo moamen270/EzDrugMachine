@@ -3,7 +3,7 @@ function goBack(){
 }
 
 function exit(){
-  window.location.href ='EzDrugMachine/index.html'
+  window.location.href ='~/EzDrugMachine/index.html'
   freeCart()
 }
 
