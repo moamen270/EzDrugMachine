@@ -4,7 +4,7 @@ function goBack(){
 
 function exit(){
   freeCart()
-  window.location.href ='https://moamen270.github.io/EzDrugMachine/'
+  window.location.href ='index.html'
   
 }
 
