@@ -14,6 +14,8 @@
     </style>
 </head>
 <body class="primary-bg">
+  <div class="loader"></div>
+
   <div onclick="exit()">
     <i class="bi bi-x-square-fill exit text-white"></i>
   </div>
@@ -21,9 +23,10 @@
     <i class="bi bi-caret-left-square-fill back text-white"></i>
   </div>
   <div id="checkLength" class="container w-cust h-auto  bg-light pt-5 ">
-    <i class="bi bi-dot dot text-white" id="dot"></i>
-    <div class="cart " onclick="goCart()">
-      
+    
+    <div class="cart " id="cart" >
+      <i class="bi bi-dot dot text-danger d-none" id="dot" onclick="goCart()" ></i>
+
       <div class="icon-container">        
         <i class="bi bi-cart2  text-dark"  ></i>
         <span class="badge"><output id="count"></output> </span>
@@ -91,6 +94,7 @@
 
   <script src="script/Cart.js"></script>
   <script src="script/Moves.js"></script>
+  <script src="script/loader.js"></script>
 
 </body>
 </html>
