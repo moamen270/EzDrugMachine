@@ -2,7 +2,7 @@ const token = localStorage.getItem("jwt");
 
 console.log("Start");
 async function getPrescription(token) {
-  await fetch(`https://localhost:44332/Prescription`, {
+  await fetch(`https://api.ezdrug.tech/Prescription`, {
     headers: {
       Authorization: `Bearer ${token}`,
       cookie: `jwt=${token}`,
