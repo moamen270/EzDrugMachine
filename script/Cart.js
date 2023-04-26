@@ -1,5 +1,6 @@
 setCart();
 getCount();
+
 async function addToCart(id) {
   console.log("add to cart working ");
 
@@ -56,8 +57,10 @@ async function getData(id) {
   }
 }
 
-function addPrescription(id) {
-  fetch(`https://api.ezdrug.tech/Prescription/GetPrescriptionDetails/${id}`)
+async function addPrescription(id) {
+  await fetch(
+    `https://api.ezdrug.tech/Prescription/GetPrescriptionDetails/${id}`
+  )
     .then((response) => response.json())
     .then((data) => {
       data.order.forEach((item) => {
@@ -86,4 +89,6 @@ async function addPrescriptionToCart(id) {
 
   console.log(cartData);
   getCount();
+
+  setTimeout(goCart, 150);
 }

@@ -21,7 +21,7 @@ async function getPrescription(token) {
         if (item.dispensing) {
           value = `<button class="btn btn-secondary  w-50 text-white " disabled >Recived</button>`;
         } else {
-          value = `<button onclick="addPrescription('${item.id}')" class="btn primary-bg  w-50 text-white" >Order</button>`;
+          value = `<button  onclick="addPrescription('${item.id}');" class="btn primary-bg  w-50 text-white" >Order</button>`;
         }
         const row = `
       <tr class="">                        
@@ -45,6 +45,10 @@ async function getPrescription(token) {
       `;
         tbody.innerHTML += row;
       });
+
+
+
+      
     })
     .catch((error) => console.error(error));
 }

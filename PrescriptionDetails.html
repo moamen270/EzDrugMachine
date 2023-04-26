@@ -20,7 +20,8 @@
 
     <title>Prescription Details</title>
   </head>
-  <body class="primary-bg">
+
+  <body class="primary-bg anti-Scroll">
     <div class="loader"></div>
 
     <div onclick="exit()">
@@ -46,29 +47,30 @@
       <img class="img-part pt-3" src="images/Name Light NoBg.png" alt="" />
       <h1 class="text-center head mb-3"><b> </b></h1>
       <div class="container">
-        <h1 class="text-center card head mb-5 bg-light py-4">
+        <h1 class="text-center card head mb-2 bg-light">
           <b id="drugName">ShoppingCart </b>
         </h1>
-        <div class="table-responsive scroll h-75">
+        <div class="table-responsive scroll h-cust">
           <table class="table custom-table w-100 text-center">
             <thead>
               <tr>
                 <th class="w-10" scope="col">Drug</th>
-                <th class="w-10" scope="col">dose</th>
-                <th class="w-10" scope="col">dosage</th>
-                <th class="w-10" scope="col">comment</th>
+                <th class="w-10" scope="col">Dose</th>
+                <th class="w-10" scope="col">Dosage</th>
+                <th class="w-10" scope="col">Comment</th>
+                <th class="w-10" scope="col">Meal</th>
                 <th class="w-10" scope="col">#</th>
               </tr>
             </thead>
             <tbody class="" id="prescriptionDetails"></tbody>
           </table>
-          <div class="row m-2" id="">
-            <div class="col-10"></div>
-            <div class="col-2">
-              `<button id="order" class="btn primary-bg w-50 text-white">
-                Order</button
-              >`
-            </div>
+        </div>
+        <div class="row" id="">
+          <div class="col-10"></div>
+          <div class="col-2">
+            <button id="order" class="btn primary-bg w-75 text-white">
+              Order
+            </button>
           </div>
         </div>
       </div>
@@ -84,6 +86,12 @@
             .getElementById("order")
             .setAttribute("onclick", `addPrescription(${Id})`);
           data.order.forEach((item) => {
+            var meal = "";
+            if (item.beforeAfterMeal) {
+              meal = `After`;
+            } else {
+              meal = `Before`;
+            }
             const row = `
             <tr>
               <td class="text-center py-5 my-5">
@@ -96,6 +104,8 @@
               <td>${item.dose}</td>
               <td>${item.dosage}</td>
               <td>${item.comment}</td>
+              <td>${meal}</td>
+
               <td>
                 <button
                   onclick="goTo('Drug.html?id=${item.drug.id}')"

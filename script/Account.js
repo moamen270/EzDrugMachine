@@ -93,7 +93,7 @@ form.addEventListener("submit", async (e) => {
   formData.append("password", password);
 
   // Send an HTTP POST request to the login API
-  const response = await fetch("https://api.ezdrug.tech/Login", {
+  const response = await fetch("https://api.ezdrug.tech/account/Login", {
     method: "POST",
     body: formData,
   });
