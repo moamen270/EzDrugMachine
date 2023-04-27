@@ -5,7 +5,6 @@ async function getPrescription(token) {
   await fetch(`https://api.ezdrug.tech/Prescription`, {
     headers: {
       Authorization: `Bearer ${token}`,
-      cookie: `jwt=${token}`,
     },
   })
     .then((response) => response.json())
@@ -21,7 +20,7 @@ async function getPrescription(token) {
         if (item.dispensing) {
           value = `<button class="btn btn-secondary  w-50 text-white " disabled >Recived</button>`;
         } else {
-          value = `<button  onclick="addPrescription('${item.id}');" class="btn primary-bg  w-50 text-white" >Order</button>`;
+          value = `<button  class="btn primary-bg  w-50 text-white" >Order</button>`;
         }
         const row = `
       <tr class="">                        
@@ -39,16 +38,22 @@ async function getPrescription(token) {
           <button onclick="goTo('PrescriptionDetails.html?id=${item.id}')" class="btn bg-secondry   text-white w-50">View </button>
         </td>
         <td>
-          ${value}
+        <form action="https://api.ezdrug.tech/Prescription/Dispensing/${item.id}"  method="POST">
+        <input type="hidden" name="URLs.domainName" value="http://127.0.0.1:5500" />
+
+        <input type="hidden" name="URLs.successUrl" value="PConfirm.html?id=" />
+  
+        <input type="hidden" name="URLs.faildUrl" value="Pdeny.html?id=" />
+        <input type="hidden" name="URLs.token" value="${token}">
+        
+        ${value}
+
+        </form>
         </td
       </tr>
       `;
         tbody.innerHTML += row;
       });
-
-
-
-      
     })
     .catch((error) => console.error(error));
 }

@@ -31,18 +31,6 @@
       <i class="bi bi-caret-left-square-fill back text-white"></i>
     </div>
 
-    <div class="cart" id="cart">
-      <i
-        class="bi bi-dot dot text-danger d-none"
-        id="dot"
-        onclick="goCart()"
-      ></i>
-
-      <div class="icon-container">
-        <i class="bi bi-cart2 text-dark"></i>
-        <span class="badge"><output id="count"></output> </span>
-      </div>
-    </div>
     <div class="container w-cust h-100 bg-white" id="calcDimen">
       <img class="img-part pt-3" src="images/Name Light NoBg.png" alt="" />
       <h1 class="text-center head mb-3"><b> </b></h1>
@@ -65,26 +53,49 @@
             <tbody class="" id="prescriptionDetails"></tbody>
           </table>
         </div>
-        <div class="row" id="">
+        <div class="row">
           <div class="col-10"></div>
-          <div class="col-2">
-            <button id="order" class="btn primary-bg w-75 text-white">
-              Order
-            </button>
-          </div>
+          <div class="col-2" id="order">form</div>
         </div>
       </div>
     </div>
     <script>
       const urlParams = new URLSearchParams(window.location.search);
       const Id = urlParams.get("id");
+      const token = localStorage.getItem("jwt");
+
+      fetch(`https://api.ezdrug.tech/Prescription/${Id}`)
+        .then((response) => response.json())
+        .then((data) => {
+          const orderButtom = document.getElementById("order");
+
+          var value = "";
+          if (data.dispensing) {
+            value = `<button class="btn btn-secondary  w-50 text-white " disabled >Recived</button>`;
+          } else {
+            value = `<button  class="btn primary-bg  w-50 text-white" >Order</button>`;
+          }
+
+          orderButtom.innerHTML = `
+          <form action="https://api.ezdrug.tech/Prescription/Dispensing/${data.id}"  method="POST">
+            <input type="hidden" name="URLs.domainName" value="http://127.0.0.1:5500" />
+
+            <input type="hidden" name="URLs.successUrl" value="PConfirm.html?id=" />
+
+            <input type="hidden" name="URLs.faildUrl" value="Pdeny.html?id=" />
+            <input type="hidden" name="URLs.token" value="${token}">
+
+            ${value}
+
+            </form>
+
+          `;
+        });
+
       fetch(`https://api.ezdrug.tech/Prescription/GetPrescriptionDetails/${Id}`)
         .then((response) => response.json())
         .then((data) => {
           const tbody = document.getElementById("prescriptionDetails");
-          document
-            .getElementById("order")
-            .setAttribute("onclick", `addPrescription(${Id})`);
           data.order.forEach((item) => {
             var meal = "";
             if (item.beforeAfterMeal) {
@@ -122,7 +133,6 @@
         .catch((error) => console.error(error));
     </script>
 
-    <script src="script/Cart.js"></script>
     <script src="script/Moves.js"></script>
     <script src="script/loader.js"></script>
   </body>

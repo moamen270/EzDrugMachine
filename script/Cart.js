@@ -13,15 +13,23 @@ async function addToCart(id) {
   console.log("cartData");
 
   console.log(cartData);
-  cartData.push(drug.drug);
-  // Store the updated cart data back in session storage
-  sessionStorage.setItem("cart", JSON.stringify(cartData));
-  // Add a new product to the cart
-  console.log("after");
 
-  console.log(cartData);
-  getCount();
-  window.location.href = "Categories.html";
+  var flag = false;
+  cartData.forEach((item) => {
+    if (item.id == id) flag = true;
+  });
+  console.log(flag);
+  if (!flag) {
+    cartData.push(drug.drug);
+    // Store the updated cart data back in session storage
+    sessionStorage.setItem("cart", JSON.stringify(cartData));
+    // Add a new product to the cart
+    console.log("after");
+
+    console.log(cartData);
+    getCount();
+    window.location.href = "Categories.html";
+  }
 }
 
 function setCart() {
