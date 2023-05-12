@@ -60,6 +60,12 @@
         .then((data) => {
           console.log(data);
         });
+
+      fetch(`http://127.0.0.1:5000/process/2`)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        });
     </script>
     <script src="script/Moves.js"></script>
     <script src="script/loader.js"></script>

@@ -357,3 +357,30 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.center-element {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
+.text-5 {
+  font-size: 500%;
+}
+.text-4 {
+  font-size: 400%;
+}
+.text-3 {
+  font-size: 300%;
+}
+.text-2 {
+  font-size: 200%;
+}
+
+.text-1 {
+  font-size: 100%;
+}

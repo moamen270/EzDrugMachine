@@ -21,7 +21,7 @@
     <title>Temperature</title>
   </head>
 
-  <body class="primary-bg">
+  <body class="primary-bg anti-Scroll">
     <div class="loader"></div>
 
     <div onclick="exit()">
@@ -31,12 +31,39 @@
       <i class="bi bi-caret-left-square-fill back text-white"></i>
     </div>
     <div class="container w-cust h-100 bg-light pt-5">
-      <div>
+      <div class="mb-5">
         <img class="img-part" src="images/NoBg.png" width="50%" alt="" />
         <h1 class="text-center head"><b>Temperature </b></h1>
       </div>
-    </div>
 
+      <div class="">
+        <div class="h-100">
+          <div id="temperature" class="center-element">
+            <p class="text-5">
+              Your Temperature is
+              <span class="text-success text-1">37 </span> &deg;C
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      fetch(`http://127.0.0.1:5000/temperature`)
+        .then((response) => response.json())
+        .then((data) => {
+          var element = document.getElementById("temperature");
+          if (data.temperature > 37)
+            element.innerHTML = `<p class="text-5">
+            Your Temperature is
+            <span class="text-danger text-1">${data.temperature} </span> &deg;C
+          </p>`;
+          else
+            element.innerHTML = `<p class="text-5">
+            Your Temperature is
+            <span class="text-success text-1">${data.temperature} </span> &deg;C
+          </p>`;
+        });
+    </script>
     <script src="script/Moves.js"></script>
     <script src="script/loader.js"></script>
   </body>
